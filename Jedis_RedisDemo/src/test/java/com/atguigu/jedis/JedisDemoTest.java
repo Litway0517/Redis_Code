@@ -26,6 +26,19 @@ public class JedisDemoTest {
 
     }
 
+    // 测试set
+    @Test
+    public void set() {
+        jedis.select(13);
+
+        // s1: a b c
+        jedis.sadd("s1", "a", "b", "c");
+        Set<String> s1 = jedis.smembers("s1");
+        System.out.println(s1);
+
+
+    }
+
     // 测试list
     @Test
     public void list() {
