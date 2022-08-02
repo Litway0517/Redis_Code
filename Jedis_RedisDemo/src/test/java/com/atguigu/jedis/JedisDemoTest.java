@@ -29,13 +29,21 @@ public class JedisDemoTest {
     // 测试list
     @Test
     public void list() {
-        this.jedis.select(14);
+        jedis.select(14);
+        // l1: a b c
         jedis.rpush("l1", "a", "b", "c");
         List<String> l1 = jedis.lrange("l1", 0, -1);
         l1.stream().forEach(System.out::println);
 
+        // l1: a b
         jedis.rpop("l1");
+        l1 = jedis.lrange("l1", 0, -1);
         System.out.println(l1);
+
+        /*
+            注意:
+                虽然对list进行了操作, 但是l1还是原来的l1, 所以直接输出l1的话还是a b c, 并不是a b
+         */
 
     }
 
