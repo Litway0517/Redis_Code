@@ -36,6 +36,11 @@ public class JedisDemoTest {
         Set<String> s1 = jedis.smembers("s1");
         System.out.println(s1);
 
+        jedis.sadd("s1", "dog");
+
+        s1 = jedis.smembers("s1");
+        System.out.println(s1);
+
 
     }
 
