@@ -34,6 +34,8 @@ public class JedisDemoTest {
 
         Set<String> zset = jedis.zrange("zset", 0, -1);
         System.out.println(zset);
+
+        jedis.close();
     }
 
 
@@ -46,6 +48,7 @@ public class JedisDemoTest {
         jedis.hset("users", "age", "20");
         List<String> hmget = jedis.hmget("users", "name", "age");
         System.out.println(hmget);
+        jedis.close();
     }
 
     // 测试set
@@ -63,7 +66,7 @@ public class JedisDemoTest {
         s1 = jedis.smembers("s1");
         System.out.println(s1);
 
-
+        jedis.close();
     }
 
     // 测试list
@@ -79,7 +82,7 @@ public class JedisDemoTest {
         jedis.rpop("l1");
         l1 = jedis.lrange("l1", 0, -1);
         System.out.println(l1);
-
+        jedis.close();
         /*
             注意:
                 虽然对list进行了操作, 但是l1还是原来的l1, 所以直接输出l1的话还是a b c, 并不是a b
@@ -96,7 +99,7 @@ public class JedisDemoTest {
         jedis.mset("k1", "v1", "k2", "v2");
         List<String> mget = jedis.mget("k1", "k2");
         System.out.println(mget);
-
+        jedis.close();
     }
 
 
