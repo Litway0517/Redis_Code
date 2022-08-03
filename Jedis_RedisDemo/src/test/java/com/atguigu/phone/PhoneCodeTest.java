@@ -13,8 +13,8 @@ public class PhoneCodeTest {
     @Test
     public void verifyCode() {
         String phoneNumber = "13755296636";
-        // PhoneCode.sendCode(phoneNumber);
-        PhoneCode.getRedisCode(phoneNumber, "708563");
+        PhoneCode.sendCode(phoneNumber);
+        // PhoneCode.getRedisCode(phoneNumber, "636851");
 
     }
 
