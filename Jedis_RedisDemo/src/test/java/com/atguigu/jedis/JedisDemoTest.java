@@ -26,7 +26,20 @@ public class JedisDemoTest {
 
     }
 
+    // 测试Zset
+    @Test
+    public void zset() {
+        jedis.select(13);
+        jedis.zadd("zset", 100d, "litway");
+
+        Set<String> zset = jedis.zrange("zset", 0, -1);
+        System.out.println(zset);
+    }
+
+
+
     // 测试hash
+    @Test
     public void hash() {
         jedis.select(13);
         jedis.hset("users", "name", "litway");
