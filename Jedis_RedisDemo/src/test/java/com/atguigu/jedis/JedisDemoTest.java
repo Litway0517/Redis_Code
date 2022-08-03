@@ -26,6 +26,15 @@ public class JedisDemoTest {
 
     }
 
+    // 测试hash
+    public void hash() {
+        jedis.select(13);
+        jedis.hset("users", "name", "litway");
+        jedis.hset("users", "age", "20");
+        List<String> hmget = jedis.hmget("users", "name", "age");
+        System.out.println(hmget);
+    }
+
     // 测试set
     @Test
     public void set() {
