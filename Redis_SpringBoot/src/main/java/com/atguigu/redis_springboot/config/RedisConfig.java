@@ -19,6 +19,11 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.time.Duration;
 
+/**
+ *
+ * @author DELL_
+ * {@code @date} 2022/08/05
+ */
 @EnableCaching
 @Configuration
 public class RedisConfig {
